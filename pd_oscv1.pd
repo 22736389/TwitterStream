@@ -1,0 +1,65 @@
+#N canvas 0 23 1280 647 10;
+#X declare -lib oscx;
+#X msg 771 119 \; pd dsp 0;
+#X msg 769 64 \; pd dsp 1 \; cf 622;
+#X obj 767 23 import oscx;
+#X obj 511 27 dumpOSC 12000;
+#X obj 511 72 OSCroute /wek;
+#X obj 512 115 OSCroute /outputs;
+#X obj 399 183 print;
+#X obj 627 534 osc~;
+#X obj 415 585 dac~;
+#X obj 454 398 hsl 128 15 0 0.1 0 0 empty empty Gain -2 -8 0 10 -262144
+-1 -1 6881 1;
+#X obj 626 500 +~;
+#X obj 673 445 osc~;
+#X obj 628 328 hsl 128 15 0 500 0 0 empty cf empty -2 -8 0 10 -262144
+-1 -1 6881 1;
+#X obj 673 469 *~;
+#X msg 673 424 4;
+#X msg 818 445 25;
+#X obj 774 465 *;
+#X floatatom 774 487 5 0 0 0 - - -;
+#X text 768 326 4Hz - Modulation Frequency;
+#X obj 778 394 loadbang;
+#X floatatom 673 360 5 0 0 0 - - -;
+#X obj 774 443 / 1000;
+#X obj 416 550 *~ 0.1;
+#X obj 451 269 / 10;
+#X obj 626 264 * 500;
+#X obj 513 158 unpack f;
+#X text 675 307 Variable Amplitude - Frequency Modulation;
+#X text 578 171 Information coming from port 12000: wekinator \, is
+send to control both amplitude and gain;
+#X text -12 9 A simple patch controlling frecuency and gain using information
+from twitter streaming. If the search term is trendy \, the values
+of both frecuency and gain are high \; otherwise \, if the search term
+is not that trendy \, these values tend to be low. Made by Adriana
+Suárez - Barranquilla-Colombia \; Some components are extracted from
+the patch in the wekinator web page: http://www.doc.gold.ac.uk/~mas01rf/WekinatorDownloads/wekinator_examples/all_source_zips/SimpleSlider_3inputs.pd.zip
+;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 25 0;
+#X connect 7 0 22 0;
+#X connect 9 0 22 1;
+#X connect 10 0 7 0;
+#X connect 11 0 13 0;
+#X connect 12 0 20 0;
+#X connect 12 0 10 0;
+#X connect 12 0 21 0;
+#X connect 13 0 10 1;
+#X connect 14 0 11 0;
+#X connect 15 0 16 1;
+#X connect 16 0 13 1;
+#X connect 16 0 17 0;
+#X connect 19 0 14 0;
+#X connect 19 0 15 0;
+#X connect 21 0 16 0;
+#X connect 22 0 8 0;
+#X connect 22 0 8 1;
+#X connect 23 0 9 0;
+#X connect 24 0 12 0;
+#X connect 25 0 24 0;
+#X connect 25 0 23 0;
+#X connect 25 0 6 0;
