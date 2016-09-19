@@ -10,7 +10,7 @@ This system can be used to start learning about sonification using technology an
 2.  Install tweepy Python library: (https://github.com/tweepy/tweepy),(http://tweepy.readthedocs.io/en/v3.5.0/).  
 3. Install Pure Data Extended version: (https://puredata.info/downloads)
 4. Open files twitterstream.inputproj (WekInputHelper), twitterstream.wekproj (Wekinator) (Inside the twitterstream folder) and pd_oscv1.pd (Pure Data Patch).
-5. Run the Python file stream.py, introduce a search term and the streaming information will start to come up.
+5. Run the Python file Stream.py, introduce a search term and the streaming information will start to come up.
 6. The Pure Data Patch will start playing a high or low frequency sound to represent the number of tweets per topic.
 
 
